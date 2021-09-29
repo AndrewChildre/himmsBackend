@@ -6,6 +6,12 @@ router.get('/elements', (req, res, next) => {
    Element.find({}).then(function(element){
        res.send(element)
    })
+});
+
+router.get('/resolve/:id', (req, res) => {
+    Element.find(req.params.id).then(function(element){
+        res.send(element)
+    })
 })
 
 router.post('/elements', (req, res, next) => {
